@@ -24,9 +24,9 @@ prepare() {
 }
 
 package() {
-    cd "$srcdir/XMOS/"
-    mkdir -p "$pkgdir"/usr/{share,bin}
-    cp -r xTIMEcomposer "$pkgdir/usr/share"
-    cd "$pkgdir/usr/bin"
-    ln -s /usr/share/xTIMEcomposer/Community_${pkgver}/bin/xtimecomposer .
+	install -d -m755 "${pkgdir}/opt"
+	install -d -m755 "${pkgdir}/usr/bin/"
+	cp -r "$srcdir/XMOS/xTIMEcomposer" "${pkgdir}/opt/"
+	cd "${pkgdir}/usr/bin"
+	ln -s /opt/xTIMEcomposer/Community_${pkgver}/bin/xtimecomposer .
 }
