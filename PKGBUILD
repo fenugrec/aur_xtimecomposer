@@ -1,6 +1,6 @@
 # Maintainer: Will Price <will.price94+aur@gmail.com>
 pkgname=xtimecomposer
-pkgver=14.1.2
+pkgver=14.4.1
 pkgrel=1
 pkgdesc="Eclipse based IDE for the xCORE microcontrollers"
 arch=('x86_64' 'i686')
@@ -11,7 +11,8 @@ options=(!strip staticlibs)
 depends=(java-runtime)
 
 source=("xTIMEcomposer-Community_${pkgver%%.*}-Linux64-Installer_Community_$pkgver.tgz::https://www.xmos.com/published/xtimecomposer-community_14-linux64-installer?ver=latest")
-md5sums=('3a12a68247022083e624f19e85662fa1')
+sha256sums=('1fa239dca4bff36b91a37b5d73264cd97967bec2d7456b2d5b2c1b660fd20b19')
+
 
 # Don't compress as it takes forever!
 PKGEXT=".tar"
