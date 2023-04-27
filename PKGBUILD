@@ -1,32 +1,34 @@
 # Maintainer: Will Price <will.price94+aur@gmail.com>
+
+# note : download needs to be via web + login
+
 pkgname=xtimecomposer
-pkgver=14.4.1
+pkgver=15.2.1
 pkgrel=1
 pkgdesc="Eclipse based IDE for the xCORE microcontrollers"
 arch=('x86_64' 'i686')
-url="https://www.xmos.com/products/tools/xtimecomposer"
+url="https://www.xmos.ai/software-tools/"
 license=('Custom')
 provides=('xtimecomposer')
 options=(!strip staticlibs)
 depends=(java-runtime)
 
-source=("xTIMEcomposer-Community_${pkgver%%.*}-Linux64-Installer_Community_$pkgver.tgz::https://www.xmos.com/published/xtimecomposer-community_14-linux64-installer?ver=latest")
-sha256sums=('1fa239dca4bff36b91a37b5d73264cd97967bec2d7456b2d5b2c1b660fd20b19')
+source=("Tools-15---Linux-64_${pkgver}.tgz::https://www.xmos.ai/file/tools-15-linux-64?version=latest")
+sha256sums=('e39738a46fb001afcdcb78e37c95276b826abd8fd08140d25e678325b6410189')
 
 
 # Don't compress as it takes forever!
 PKGEXT=".tar"
 
 prepare() {
-    ln -s --force \
-        /usr/lib/libpangoft2-1.0.so.0 \
-        "$srcdir/XMOS/xTIMEcomposer/Community_${pkgver}/xtimecomposer_bin/swtbrowserlibs/"
+# create profile script that appends to PATH
+	cat > ${pkgname}.sh <<END
+export PATH="\$PATH":'/opt/XTC/${pkgver}/bin'
+END
 }
 
 package() {
 	install -d -m755 "${pkgdir}/opt"
 	install -d -m755 "${pkgdir}/usr/bin/"
-	cp -r "$srcdir/XMOS/xTIMEcomposer" "${pkgdir}/opt/"
-	cd "${pkgdir}/usr/bin"
-	ln -s /opt/xTIMEcomposer/Community_${pkgver}/bin/xtimecomposer .
+	cp -r "$srcdir/XMOS/XTC" "${pkgdir}/opt/"
 }
