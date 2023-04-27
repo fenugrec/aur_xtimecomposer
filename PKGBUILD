@@ -28,6 +28,7 @@ END
 }
 
 package() {
+	install -Dm644 ${pkgname}.sh "$pkgdir/etc/profile.d/${pkgname}.sh"
 	install -d -m755 "${pkgdir}/opt"
 	install -d -m755 "${pkgdir}/usr/bin/"
 	cp -r "$srcdir/XMOS/XTC" "${pkgdir}/opt/"
