@@ -10,8 +10,7 @@ arch=('x86_64' 'i686')
 url="https://www.xmos.ai/software-tools/"
 license=('Custom')
 provides=('xtimecomposer')
-options=(!strip staticlibs)
-depends=(java-runtime)
+options=(!strip)
 
 source=("Tools-15---Linux-64_${pkgver}.tgz::https://www.xmos.ai/file/tools-15-linux-64?version=latest")
 sha256sums=('e39738a46fb001afcdcb78e37c95276b826abd8fd08140d25e678325b6410189')

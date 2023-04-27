@@ -6,10 +6,8 @@ pkgbase = xtimecomposer
 	arch = x86_64
 	arch = i686
 	license = Custom
-	depends = java-runtime
 	provides = xtimecomposer
 	options = !strip
-	options = staticlibs
 	source = Tools-15---Linux-64_15.2.1.tgz::https://www.xmos.ai/file/tools-15-linux-64?version=latest
 	sha256sums = e39738a46fb001afcdcb78e37c95276b826abd8fd08140d25e678325b6410189
 
