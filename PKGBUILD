@@ -10,6 +10,7 @@ arch=('x86_64' 'i686')
 url="https://www.xmos.ai/software-tools/"
 license=('Custom')
 provides=('xtimecomposer')
+requires=('ncurses5-compat-libs')
 options=(!strip)
 
 source=("Tools-15---Linux-64_${pkgver}.tgz::https://www.xmos.ai/file/tools-15-linux-64?version=latest")
